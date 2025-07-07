@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SpinPlayEnjoy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Spin & Play</h1>
+    <div class="wheel">
+      <div class="segment" style="top: 0; left: 100px;">🎨</div>
+      <div class="segment" style="top: 50px; left: 200px;">🔢</div>
+      <div class="segment" style="top: 150px; left: 200px;">🎯</div>
+      <div class="segment" style="top: 200px; left: 100px;">🧠</div>
+      <div class="segment" style="top: 150px; left: 0px;">⌨️</div>
+    </div>
+    <button id="spinBtn" onclick="spinWheel()">SPIN</button>
+  </div>
+
+  <div id="instruction">
+    <h3>Game Instructions</h3>
+    <p id="message"></p>
+    <button id="okBtn">OK, Start Game</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
