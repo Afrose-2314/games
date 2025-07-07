@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Match Game</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #e3f2fd;
+      text-align: center;
+      padding-top: 50px;
+    }
+    #colorBox {
+      width: 150px;
+      height: 150px;
+      margin: 20px auto;
+      border-radius: 10px;
+      border: 3px solid #333;
+    }
+    .option-btn {
+      margin: 10px;
+      padding: 10px 25px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      background-color: #2196F3;
+      color: white;
+    }
+    #score {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Color Match</h1>
+  <div id="colorBox"></div>
+  <div id="options"></div>
+  <div id="score">Score: 0</div>
+
+  <script>
+    const colors = ["red", "blue", "green", "yellow", "purple","black","pink","brown","orange"];
+    let score = 0;
+
+    function startGame() {
+      const colorBox = document.getElementById("colorBox");
+      const optionsDiv = document.getElementById("options");
+
+      const correctColor = colors[Math.floor(Math.random() * colors.length)];
+      colorBox.style.backgroundColor = correctColor;
+
+      optionsDiv.innerHTML = "";
+      const shuffled = [...colors].sort(() => 0.5 - Math.random());
+      shuffled.forEach(color => {
+        const btn = document.createElement("button");
+        btn.innerText = color;
+        btn.className = "option-btn";
+        btn.onclick = () => {
+          if (color === correctColor) {
+            score++;
+          } else {
+            score--;
+          }
+          document.getElementById("score").innerText = "Score: " + score;
+          startGame(); // next round
+        };
+        optionsDiv.appendChild(btn);
+      });
+    }
+
+    startGame();
+  </script>
+</body>
+</html>
