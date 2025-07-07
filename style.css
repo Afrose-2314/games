@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle, #fefefe, #ccdcff);
+}
+.container {
+  text-align: center;
+  margin-top: 5%;
+}
+.wheel {
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 10px solid #0072ff;
+  position: relative;
+  animation: glow 2s infinite alternate;
+}
+.segment {
+  width: 100px;
+  height: 100px;
+  background: #ffcc00;
+  position: absolute;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 50%;
+  transform-origin: 150px 150px;
+}
+#spinBtn {
+  margin-top: 30px;
+  padding: 12px 30px;
+  background-color: #0072ff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+@keyframes glow {
+  from { box-shadow: 0 0 10px #0072ff; }
+  to { box-shadow: 0 0 30px #0072ff; }
+}
+#instruction {
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  background: #fff;
+  padding: 20px;
+  border: 4px solid #0072ff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
+}
